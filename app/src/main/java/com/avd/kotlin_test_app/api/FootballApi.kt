@@ -1,5 +1,6 @@
 package com.avd.kotlin_test_app.api
 
+import com.avd.kotlin_test_app.model.Competition
 import retrofit2.http.GET
 import retrofit2.http.Path
 import rx.Observable
@@ -11,5 +12,5 @@ import rx.Observable
 interface FootballApi {
 
     @GET("competitions/?season={year}")
-    fun getCompetitions (@Path("year") year : Int) : Observable<Any>
+    fun getCompetitions (@Path("year") year : Int) : Observable<Competition>
 }
