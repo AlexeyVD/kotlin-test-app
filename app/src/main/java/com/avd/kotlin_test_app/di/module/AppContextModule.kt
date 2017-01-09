@@ -13,7 +13,7 @@ import javax.inject.Singleton
 @Module
 class AppContextModule {
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideContext() : Context = FootballApplication.instance
 }

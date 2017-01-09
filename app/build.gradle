@@ -15,7 +15,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        buildConfigField 'String', 'API_URL', '\"http://http://api.football-data.org/v1/\"'
+        buildConfigField 'String', 'API_URL', '\"http://api.football-data.org/v1/\"'
     }
     buildTypes {
         release {
@@ -52,6 +52,10 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+
+    //RX
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.2.5'
 }
 repositories {
     mavenCentral()
