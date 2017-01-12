@@ -29,14 +29,8 @@ class MainActivity : AppCompatActivity() {
         repository.getCompetitions(2016)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    competitions -> printResult(competitions)
-                }, {
-                    error -> Log.e("MainActivity", error.message)
-                })
-    }
-
-    private fun printResult(competitions: List<Competition>) {
-        competitions.forEach { competition -> Log.i("MainActivity", competition.caption) }
+                .subscribe(
+                        { it.forEach { Log.i("MainActivity", it.caption) } },
+                        { Log.e("MainActivity", it.message) })
     }
 }
